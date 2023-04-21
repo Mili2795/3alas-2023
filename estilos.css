@@ -13,3 +13,26 @@ body {
     /*Todo el sitio va a estar en sans-serif */
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.cabecera,
+.contenido {
+    max-width: 1200px;
+    /* Márgen automático me centra los elementos en la pantalla */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cabecera {
+    display: flex;
+    /* Separar los elementos, cada uno en su esquina */
+    justify-content: space-between;
+    /* Centrarlos verticalmente */
+    align-items: center;
+}
+.cabecera-title {
+    color: var(--naranja);
+    font-size: 24px;
+}
+.contenido {
+    background-color: var(--blanco);
+}
