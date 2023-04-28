@@ -6,6 +6,7 @@
     --gris-claro: #ccc;
     --blanco: #fff;
     --negro: #000;
+    --verde: #24e134; 
 }
 
 
@@ -32,8 +33,7 @@ POR LO TANTO ABARCA TODAS LAS ETIQUETAS Y SELECCIONA UNA POR UNA.
 
 }
 body {
-    background-color: var(--gris-oscuro);
-    background-image: url(images/pattern.jpg);
+    background-color: var(--verde)
     /*Todo el sitio va a estar en sans-serif */
     font-family: Arial, Helvetica, sans-serif;
     
