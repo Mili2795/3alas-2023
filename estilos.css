@@ -122,7 +122,7 @@ BOTONERA
 
 
 .productos {
-    background-color: pink;
+    
     margin-bottom: 32px;
     display: grid;
     /* 330px 1 fr significa una columna fija de 330 px y una que se adapta al tamaño 1fr va a ocupar "lo que sobra"
