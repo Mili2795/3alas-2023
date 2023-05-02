@@ -1,42 +1,29 @@
-:root { 
-    /*Declaramos nuestras variables */
-    ---naranja: #f90;
-    ---amarillo: #ffff7c; 
+:root {
+    /* Declaramos nuestras variables */
+    --naranja: #f90;
+    --amarillo: #ffff7c;
+    --verde: #8F8;
     --gris-oscuro: #27262b;
-    --gris-claro: #ccc;
-    --blanco: #fff;
+    --gris-claro: #CCC;
+    --blanco: #FFF;
     --negro: #000;
 }
 
-
-/*-----------RESET-------*/
- /*selector universal, selecciona todos los elementos del HTML y les aplica lo que escribimos 
-Ej: es como si fuera h1, h2, h3, div, p, input. 
+/* ------------- RESET ------------- */
+/* Selector universal, selecciona toooodos los elementos del HTML
+y les aplica... lo que escribamos
+    siempre va arriba de todo (después de root, antes de body)
 */
-
-/*
-Siempre va arriba de todo (despues de root, antes de body)
-PORQUE NO PUEDE IR DENTRO DEL BODY: por la HERENCIA. 
-
-HAY PROPIEDADES QUE SON HEREDABLES Y OTRAS QUE NO.
-LAS HEREDABLES SON AQUELLAS NECESARIAS Y UTILES.
-
-AQUELLAS NO HEREDABLES PUEDEN UTILIZARSE CON EL SELECTOR UNIVERSAL QUE ES EL " * "
-POR LO TANTO ABARCA TODAS LAS ETIQUETAS Y SELECCIONA UNA POR UNA.
-*/
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-
 }
+
 body {
-    background-color: var(--gris-oscuro);
-    background-image: url(images/pattern.jpg);
-    /*Todo el sitio va a estar en sans-serif */
+    /* Todo el sitio va a estar con sans-serif */
     font-family: Arial, Helvetica, sans-serif;
-    
+    background-color: var(--verde);
 }
 
 .cabecera,
@@ -55,42 +42,28 @@ body {
     align-items: center;
 }
 .cabecera-title {
-    color: var(---naranja);
+    color: var(--naranja);
     font-size: 24px;
 }
 .contenido {
     background-color: var(--blanco);
 }
 
-
-/* 
-
-BOTONERA
-
+/*
+    ---------- BOTONERA -----------
 */
 
-.nav {
-    background-color: antiquewhite;
-}
-
 .nav-lista {
-    background-color: var(---naranja);
-    /*Eliminar los puntitos de la lista*/
+    background-color: var(--naranja);
+    /* Eliminar los puntitos de la lista */
     list-style: none;
     display: flex;
     align-items: center;
-
     margin-bottom: 32px;
 
     padding: 12px;
     padding-left: 40px;
-    
 }
-
-.nav-item {
-    background-color: beige;
-}
-
 .nav-form {
     flex-grow: 1;
     text-align: right;
@@ -99,17 +72,18 @@ BOTONERA
     display: block;
     color: var(--blanco);
     font-weight: bold;
-    border-right: 1px solid (var(---amarillo));
-    /*8 arriba y abajo/ 12 a los costados */
+    text-decoration: none;
+    border-right: 1px solid var(--amarillo);
+    /* 8 arriba y abajo / 12 a los costados */
     padding: 2px 12px;
-    
-
 }
-
 .nav-link:hover {
-   text-decoration: underline;
+    text-decoration: underline;
 }
 
+/*
+    ---------- IMAGEN -----------
+*/
 
 .imagen {
     text-align: center;
@@ -117,96 +91,78 @@ BOTONERA
 }
 
 
-
-/*.....PRODUCTOS.....*/
-
-
+/*
+    ---------- PRODUCTOS -----------
+*/
 .productos {
-    background-color: pink;
     margin-bottom: 32px;
     display: grid;
-    /* 330px 1 fr significa una columna fija de 330 px y una que se adapta al tamaño 1fr va a ocupar "lo que sobra"
-    
-    GAP: espacio que se da entre una columna y otra*/
-
+    /* 330px 1fr significa una columna fija de 330px y una que se adapta al tamaño
+        1fr va a ocupar "lo que sobra" */
     grid-template-columns: 330px 1fr;
     gap: 20px;
 }
-
-.izquierda {
-    background-color: aqua;
-}
-
 .derecha {
-    background-color: lightsteelblue;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px
-}
-
-.producto {
-    background-color: chocolate;
-}
-
-
-.producto-tittle {
-    margin-bottom: 12px;
-    font-size: 20px;
-
-}
-
-.producto-contenedor {
-    display:grid;
-    grid-template-columns: 150px 1fr;
     gap: 20px;
 }
 
+
+/*
+    ---------- PRODUCTO -----------
+*/
+
+.producto-title {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+.producto-contenedor {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+}
 .producto-contenedor p {
     padding-top: 8px;
     font-size: 14px;
 }
 
-
-
 /*
-------------------NEWSLETTER-------
+    ---------- NEWSLETTER -----------
 */
 
 .newsletter {
-    background-color: linear-gradient var(--blanco), var(--gris-claro);
+    background-image: linear-gradient(
+        var(--blanco) 65%,
+        var(--gris-claro)
+    );
     margin-bottom: 250px;
     max-width: 1000px;
     margin-right: auto;
     margin-left: auto;
     border: 1px solid var(--gris-oscuro);
-
-    /*Redondeamos las esquinas */
+    /* Redondeamos esquinas */
     border-radius: 4px;
     padding: 12px 32px;
 
     display: flex;
-    /*centramos en vertical */
+    /* Centramos en vertical */
     align-items: center;
-}
-
-
-.newsletter-form {
-    background-color: plum;
-    flex-grow: 1;
-    text-align: right;
 }
 .newsletter-texto {
     margin-left: 32px;
 }
-
 .newsletter-parrafo2 {
     margin-left: 32px;
 }
-
-.newsletter-form input [type="submit"] {
-    background-color: none;
+.newsletter-form {
+    flex-grow: 1;
+    text-align: right;
+}
+.newsletter-form input[type="submit"] {
+    background: none;
     border: 0;
     font-weight: bold;
-    /*Devolvemos la manito */
+    /* Devolvemos "la manito" */
     cursor: pointer;
 }
